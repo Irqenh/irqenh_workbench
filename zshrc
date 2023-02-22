@@ -10,8 +10,9 @@ alias n="nvim"
 alias c="clear"
 alias q="exit"
 alias h="history"
-alias updg="sudo apt update && sudo apt uprade -y"
-
+alias updg="sudo apt update && sudo apt upgrade -y"
+alias dady="ssh -p 22544 ue8gc0t@5.8.34.17"
+alias py="python3"
 
 alias zc="n ~/.zshrc && source ~/.zshrc" 
 alias nc="n ~/.config/nvim/init.vim"

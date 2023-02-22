@@ -1,6 +1,6 @@
 {
     "colors.enable": true,
-    "suggest.autoTrigger": "none",
+    "suggest.autoTrigger": "always",
     "suggest.noselect": true
 }
 

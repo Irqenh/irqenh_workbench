@@ -2,16 +2,16 @@
 
 # Packages installation
 
-sudo apt install -y 		\
-	fonts-powerline     	\
-	zsh			            \ 
-	ranger			        \
-	vim			            \
-	neovim			        \
-	byobu			        \
-	python3			        \
-	pip	                    \   
-    nodejs                  \            
+sudo apt install -y 	\
+	fonts-powerline 	\
+	zsh		\ 
+	ranger	\
+	vim		\
+	neovim	\
+	byobu	\
+	python3	\
+	pip     \   
+    nodejs  \            
     npm
 
 # Apt udate

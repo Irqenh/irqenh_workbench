@@ -9,6 +9,7 @@ set mouse=a
 set encoding=utf-8
 
 
+
 " PLUGINS
 call plug#begin('~/.config/nvim/plugged')
     Plug 'https://github.com/ryanoasis/vim-devicons'
@@ -21,7 +22,8 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'https://github.com/jiangmiao/auto-pairs'
-    
+    Plug 'pangloss/vim-javascript'
+
 call plug#end()
 
 colorscheme gruvbox
@@ -39,6 +41,9 @@ colorscheme gruvbox
 
     " nerdtree toggle by Ctrl-T
     nnoremap <C-t> :NERDTreeToggle<CR>
+    
+    nnoremap <S-l> $
+    nnoremap <S-h> ^
 
 " Coc config
 let g:coc_global_extensions = [
@@ -47,15 +52,26 @@ let g:coc_global_extensions = [
 			\'coc-json',
 			\'coc-marketplace',
 			\'coc-prettier',
-			\'coc-python',
-			\'coc-tsserver',
 			\'coc-vimlsp',
+            \'coc-pyright',
 			\'coc-snippets',
 			\]
+
+inoremap <silent><expr> <c-space> coc#pum#visible() ? coc#pum#cancel() : coc#refresh()
 
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
-inoremap <silent><expr> <c-space> coc#refresh()
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nmap <silent> <C-s> <Plug>(coc-range-select)
+
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Js
+let g:javascript_plugin_flow = 1
 
 
